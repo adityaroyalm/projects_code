@@ -23,6 +23,7 @@ authentication.authorization_code='AQQWrZioeRhz4ljNo05Z2RXgproBFSo3wT2Vwd6A44Wuu
 # get a token
 token=authentication.get_access_token()
 application = linkedin.LinkedInApplication(token=token)
+<<<<<<< HEAD
 import pandas as pd
 df=pd.read_csv('dataset.csv')
 search=df.apply(lambda row: str(row['company_name'])+' '+str(row['location']),axis=1)
@@ -37,3 +38,7 @@ def url_finder(search):
     return website_url
 
 #https://api.linkedin.com/v1/company-search:(companies:(id,website-url))?keywords=microsoft&oauth2_access_token=AQWcyv8eL-O3gemSWN_o-sR13zBM97HrDUItairZ-zMvOfZhgTrKCjwC4TxoYf6UC3a1_EXT1nGvp-sskSm97oKAHsNZ1TJFYNjthp3nx0GUqgn4CzjFEzI_-ACzfvZgT5GRxhD_6DS-_UOkXsxPKkaozedB3eFSky6LkTayEy0VXt0cplGOnwZRr0uwqS5Xrmh6F9Z_tQbk_9j1C_MrwCZjmOQ9bVTJVUXudSNMka7tiHRL-c-Fu0jaUqDyLj26t9FD9a2B4vJtErEfKhsgHShE7M6E0Fm8YY_47WMn5pIjp5TYMOAwx_9U2wZ28--8N2J3y69TYL57vxhI20nY9mvND6xmhg&format=json
+=======
+application.get_companies(universal_names=['apple'], selectors=['name'], params={'is-company-admin': 'true'})
+application.search_company(selectors=[{'companies': ['name', 'universal-name', 'website-url']}], params={'keywords': 'apple microsoft'})
+>>>>>>> ae0bcf121ec6e909005c4725f914ff9bf1adff20
