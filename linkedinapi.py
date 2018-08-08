@@ -25,7 +25,7 @@ token=authentication.get_access_token()
 application = linkedin.LinkedInApplication(token=token)
 import pandas as pd
 #loading your required dataset having company_name and location columns 
-df=pd.read_csv('dataset.csv')
+df=pd.read_csv('dataset.csv')# this dataset is present in https://github.com/adityaroyalm/projects_code
 # it is not possible to search linkedin api using a companies location explicitly but a location can still be specified in the keywords.
 #So, merging company name with it's location
 search=df.apply(lambda row: str(row['company_name'])+' '+str(row['location']),axis=1)
